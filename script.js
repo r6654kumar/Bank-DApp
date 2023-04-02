@@ -1,7 +1,11 @@
 var contract;
 
 $(document).ready(function(){
-    web3 = new Web3(window.ethereum);   
+    web3 = new Web3(window.ethereum);  
+    if (typeof window.ethereum === 'undefined') {
+            alert('Please connect to a wallet to use this application.');
+        return;
+    } 
     var address="0xe1D879Bc60c9cb4B92e7AB9657ae4E4f47F0685C";
     var abi=[
         {
